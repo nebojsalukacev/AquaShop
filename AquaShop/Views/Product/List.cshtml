@@ -1,0 +1,20 @@
+﻿@model ProductListViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@await Html.PartialAsync("Carousel")
+
+<h2>@Model.CurrentCategory</h2>
+
+
+
+<div class="card-deck">
+    @foreach (var product in Model.Products)
+    {
+
+        @await Html.PartialAsync("ProductSummary", product)
+    }
+</div>
+

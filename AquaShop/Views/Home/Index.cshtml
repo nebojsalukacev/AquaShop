@@ -1,0 +1,12 @@
+﻿@model HomeViewModel
+
+@await Html.PartialAsync("Carousel")
+
+<h3>Favorite products of the month</h3>
+
+<div class="card-deck">
+    @foreach (var product in Model.PrefferedProducts)
+    {
+        @await Html.PartialAsync("ProductSummary", product);
+    }
+</div>

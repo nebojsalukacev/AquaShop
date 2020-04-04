@@ -1,0 +1,12 @@
+﻿@model ShoppingCartViewModel
+@inject SignInManager<IdentityUser> signInManager
+
+@if (Model.ShopingCart.ShoppingCartItems.Count > 0 && signInManager.IsSignedIn(User))
+{
+    <li>
+        <a asp-controller="ShoppingCart" asp-action="index">
+            @*<span class=""></span>*@
+            <span id="cart status">@Model.ShopingCart.ShoppingCartItems.Count</span>
+        </a>
+    </li>
+}

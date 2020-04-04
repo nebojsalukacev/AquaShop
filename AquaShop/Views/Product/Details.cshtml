@@ -1,0 +1,32 @@
+﻿@model ProductDetailsViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @*@Model.PageTitle*@
+}
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.Product.Name</h1>
+            </div>
+
+            <div class="card-body text-center">
+                <img class="card-img-top imgThumbnail" src="@Model.Product.ImagePath" asp-append-version="true" />
+
+                <h4>Product Id: @Model.Product.ProductId</h4>
+                <h5 style="text-align:justify">Description: @Model.Product.Description</h5>
+            </div>
+
+            <div class="card-footer text-center">
+                <a asp-controller="product" asp-action="list" class=" btn btn-primary">Show all products</a>
+                <a asp-controller="shoppingCart" asp-action="AddToShopingCart" asp-route-id="@Model.Product.ProductId"
+                   class="btn btn-success" id="cartButton">Add @Model.Product.Name to cart</a>
+                @*<a href="#" class="btn btn-danger">Delete</a>*@
+            </div>
+        </div>
+    </div>
+
+</div>

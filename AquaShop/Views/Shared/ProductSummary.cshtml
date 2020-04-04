@@ -1,0 +1,26 @@
+﻿@model Product
+
+
+
+
+<div class="card m-3" style="min-width:18rem; max-width:30.5%;">
+    <div class="card-header">
+        <h4>@Model.Name</h4>
+    </div>
+    <img class="card-img-top imgThumbnail" src="@Model.ImagePath" asp-append-version="true" />
+    <div class="card-footer text-center">
+        <h6>@Model.Price.ToString("c")</h6>
+        <h4>
+            <a asp-controller="product" asp-action="details" asp-route-id="@Model.ProductId">@Model.Name</a>
+        </h4>
+        <div class="addToCart" style="margin-top:15px">
+            <p class="button">
+                <a class="btn btn-success" id="cartButton" asp-controller="shoppingCart"
+                   asp-action="AddToShopingCart" asp-route-id="@Model.ProductId">Add to cart</a>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+

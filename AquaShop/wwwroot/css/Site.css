@@ -1,0 +1,16 @@
+﻿.imgThumbnail{
+    height:200px;
+    width:auto;
+}
+.container{
+    background-color:aqua;
+}
+.w-100 {
+    width: 100% !important;
+    height: 70vh;
+}
+nav{
+    padding:8px;
+    margin-top:5px;
+}
+
